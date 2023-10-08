@@ -1,31 +1,51 @@
-import '../common/Button'
+import DigitButton from '../common/DigitButton';
+import CalculateButton from '../common/CalculateButton';
+import { Grid, TextField } from '@mui/material';
+
 
 function SimpleCalculator() {
     return (
-            <div className="calculator-grid">
-            <div className="output">
-            <div className="previous-operand"></div>
-            <div className="current-operand"></div>
-            </div>
-            <button className='span-two'>AC</button>
-            <button className='span-one'>DEL</button>
-            <button className='span-one'>÷</button>
-            <button className='span-one'>1</button>
-            <button className='span-one'>2</button>
-            <button className='span-one'>3</button>
-            <button className='span-one'>*</button>
-            <button className='span-one'>4</button>
-            <button className='span-one'>5</button>
-            <button className='span-one'>6</button>
-            <button className='span-one'>+</button>
-            <button className='span-one'>7</button>
-            <button className='span-one'>8</button>
-            <button className='span-one'>9</button>
-            <button className='span-one'>-</button>
-            <button className='span-one'>-</button>
-            <button className='span-one'>0</button>
-            <button className='span-one'>=</button>
-            </div>
+        <Grid container spacing={1}>
+        <Grid item xs={12}>
+            <TextField
+              id="resultTab"
+              fullWidth
+              sx={{
+                width : '100%'
+              }}
+            />
+        </Grid>
+        <Grid item xs={12}>
+        <CalculateButton buttonText='('></CalculateButton>
+        <CalculateButton buttonText=')'></CalculateButton>
+        <CalculateButton buttonText='%'></CalculateButton>
+        <CalculateButton buttonText='AC'></CalculateButton>
+        </Grid>
+        <Grid item xs={12}>
+            <DigitButton buttonText = "7"></DigitButton>
+            <DigitButton buttonText = "8"></DigitButton>
+            <DigitButton buttonText = "9"></DigitButton>
+            <CalculateButton buttonText='÷'></CalculateButton>
+            </Grid>
+            <Grid item xs={12}>
+            <DigitButton buttonText = "4"></DigitButton>
+            <DigitButton buttonText = "5"></DigitButton>
+            <DigitButton buttonText = "6"></DigitButton>
+            <CalculateButton buttonText='*'></CalculateButton>
+            </Grid>
+            <Grid item xs={12}>
+            <DigitButton buttonText = "1"></DigitButton>
+            <DigitButton buttonText = "2"></DigitButton>
+            <DigitButton buttonText = "3"></DigitButton>
+            <CalculateButton buttonText='+'></CalculateButton>
+            </Grid>
+            <Grid item xs={12}>
+            <DigitButton buttonText = "00"></DigitButton>
+            <DigitButton buttonText = "0"></DigitButton>
+            <CalculateButton buttonText = "."></CalculateButton>
+            <CalculateButton buttonText='='></CalculateButton>
+            </Grid>
+            </Grid>
     )
 };
 
