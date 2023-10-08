@@ -6,7 +6,9 @@ import { useState } from "react";
 function SimpleCalculator() {
   const [currentValue, setCurrentValue] = useState("");
   const handleButtonOnClick = (value) => {
-    if (value === '=') {
+    if (value === '÷') {
+        setCurrentValue(currentValue + "/")
+    } else if (value === '=') {
       try {
         setCurrentValue(eval(currentValue).toString());
       } catch (error) {
@@ -19,7 +21,7 @@ function SimpleCalculator() {
     }
   };
   return (
-    <Grid container spacing={1}>
+    <Grid container spacing={1} >
       <Grid item xs={12}>
         <TextField
           id="resultTab"
